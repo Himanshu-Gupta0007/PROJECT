@@ -318,3 +318,100 @@ header a{
         font-size: 30px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media query */
+
+
+
+@media screen and (max-width: 768px) {
+    :root {
+        --width-pc: 100%;
+        --width-thumbnail: 100px;
+        --height-thumbnail: 140px;
+    }
+
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    header a {
+        margin-right: 20px;
+        font-size: 14px;
+    }
+
+    .carousel .list .item .content {
+        padding-right: 0;
+        text-align: center;
+        top: 15%;
+    }
+
+    .carousel .list .item .content .title,
+    .carousel .list .item .content .topic {
+        font-size: 2.5em;
+        line-height: 1.2em;
+    }
+
+    .carousel .list .item .buttons {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 40px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .carousel .list .item .buttons button {
+        font-size: 10px;
+        padding: 5px;
+    }
+
+    .thumbnail {
+        width: 100%;
+        bottom: 20px;
+        height: var(--height-thumbnail);
+    }
+
+    .listThumbnail {
+        gap: 10px;
+        left: 0;
+        padding: 0 10px;
+    }
+
+    .thumbnail .item .content {
+        font-size: 10px;
+    }
+
+    .arrows {
+        top: auto;
+        bottom: 10px;
+        right: 50%;
+        transform: translateX(50%);
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .arrows button {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .carousel .list .item .content .author {
+        font-size: 12px;
+    }
+}
