@@ -334,75 +334,65 @@ header a{
 
 /* media query */
 
-
-
 @media screen and (max-width: 768px) {
     :root {
-        --width-pc: 100%;
         --width-thumbnail: 100px;
-        --height-thumbnail: 140px;
-    }
-
-    header {
-        flex-direction: column;
-        height: auto;
-        padding: 10px 0;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    header a {
-        margin-right: 20px;
-        font-size: 14px;
+        --height-thumbnail: 150px;
     }
 
     .carousel .list .item .content {
+        top: 10%;
+        width: 90%;
+        max-width: 90%;
         padding-right: 0;
         text-align: center;
-        top: 15%;
     }
 
-    .carousel .list .item .content .title,
-    .carousel .list .item .content .topic {
-        font-size: 2.5em;
+    .carousel .list .item .title,
+    .carousel .list .item .topic {
+        font-size: 2em;
         line-height: 1.2em;
     }
 
     .carousel .list .item .buttons {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 40px;
-        width: 100%;
-        justify-content: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 10px;
+        justify-items: center;
     }
 
     .carousel .list .item .buttons button {
-        font-size: 10px;
-        padding: 5px;
+        width: 100%;
+        padding: 10px 0;
+        font-size: 14px;
     }
 
     .thumbnail {
-        width: 100%;
-        bottom: 20px;
-        height: var(--height-thumbnail);
+        width: 90%;
+        height: auto;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .listThumbnail {
         gap: 10px;
-        left: 0;
-        padding: 0 10px;
     }
 
-    .thumbnail .item .content {
+    .thumbnail .item .content .title {
+        font-size: 12px;
+    }
+
+    .thumbnail .item .content .description {
         font-size: 10px;
     }
 
     .arrows {
-        top: auto;
-        bottom: 10px;
+        top: unset;
+        bottom: 80px;
         right: 50%;
         transform: translateX(50%);
-        max-width: 100%;
-        justify-content: center;
+        width: auto;
     }
 
     .arrows button {
@@ -410,8 +400,80 @@ header a{
         height: 30px;
         font-size: 16px;
     }
+}
 
-    .carousel .list .item .content .author {
+
+
+
+
+@media screen and (max-width: 768px) {
+    .thumbnail {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns layout */
+        gap: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .thumbnail .item {
+        display: none; /* sabse pehle sabko hide karo */
+    }
+
+    .thumbnail .item:nth-child(-n+4) {
+        display: block; /* sirf pehle 4 items ko dikhao */
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: transform 0.3s;
+    }
+
+    .thumbnail .item:nth-child(-n+4):hover {
+        transform: scale(1.05);
+    }
+
+    .thumbnail .item:nth-child(-n+4) img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .thumbnail .item:nth-child(-n+4) .content {
+        padding: 5px;
+        text-align: center;
+    }
+
+    .thumbnail .item:nth-child(-n+4) .title {
         font-size: 12px;
+        font-weight: bold;
+    }
+
+    .thumbnail .item:nth-child(-n+4) .description {
+        font-size: 10px;
+        color: #555;
+    }
+}
+
+
+
+
+@media screen and (max-width: 468px) {
+    .thumbnail .item {
+        display: none;
+    }
+
+    /* Sirf item 4 to 7 show karo (ya sirf 4 show karo depending on what you want) */
+    .thumbnail .item:nth-child(1),
+    .thumbnail .item:nth-child(2),
+    .thumbnail .item:nth-child(3) {
+
+         display:none;      /* upar ke 3 hata diye */
+    }
+
+    .thumbnail .item:nth-child(4),
+    .thumbnail .item:nth-child(5),
+    .thumbnail .item:nth-child(6),
+    .thumbnail .item:nth-child(7) {
+        display: block /* yeh 4 dikh rahe hain */
     }
 }
